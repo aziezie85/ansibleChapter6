@@ -16,3 +16,17 @@
     win_file:
       path: C:\Temp\test_ansible\test.conf
       state: touch
+
+  - name: Change owner of path to user_haifa
+    win_owner:
+      path: C:\Temp
+      user: user_haifa
+      recurse: yes
+
+  - name: add full control access to User user_haifa
+    win_acl:
+      user: user_haifa
+      path: C:\Temp\test.conf
+      type: allow
+      rights: FullControl
+      inherit: ContainerInherit, ObjectInherit
