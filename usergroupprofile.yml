@@ -17,6 +17,5 @@
 
   - name: Create a profile for an account at C:\Users\ansible
     win_user_profile:
-      username: haifahebat
-      name: haifazahirah
+      username: haifazahirah
       state: present
