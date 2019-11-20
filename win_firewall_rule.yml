@@ -5,9 +5,16 @@
   - name: Denying port 80
     win_firewall_rule:
       name: testing
-      state: present
+      state: absent
       enable: true
       localport: 80
       action: block
       direction: In
       protocol: TCP
+
+  - name: verify page
+    uri:
+      url: http://ec2-54-254-141-183.ap-southeast-1.compute.amazonaws.com/
+      return_content: yes
+      status_code: 200
+    delegate_to: localhost
