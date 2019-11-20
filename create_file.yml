@@ -2,7 +2,17 @@
 - name: Creating a file
   hosts: all
   tasks:
+  - name: Create folder
+    win_file:
+      path: C:\Temp\test_ansible
+      state: directory
+
   - name: Create a file or modify timestamp if already present
     win_file:
       path: C:\Temp\test.conf
+      state: touch
+
+  - name: Create a file or modify timestamp if already present
+    win_file:
+      path: C:\Temp\test_ansible\test.conf
       state: touch
