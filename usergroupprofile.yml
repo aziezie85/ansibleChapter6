@@ -1,0 +1,19 @@
+---
+- name: Create a new group
+  win_group:
+    name: GGFamily
+    description: Contain GG family members
+    state: present
+
+- name: Create a user and add into group
+  win_user:
+    name: haifazahirah
+    state: present
+    groups:
+      - GGFamily
+
+- name: Create a profile for an account at C:\Users\ansible
+  win_user_profile:
+    username: haifa5
+    name: haifazahirah
+    state: present
