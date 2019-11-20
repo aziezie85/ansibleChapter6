@@ -15,7 +15,7 @@
       groups:
         - GGFamily
 
-  - name: Create a profile for an account at C:\Users\ansible
+  - name: Create a profile for an account at C:\Users\haifazahirah
     win_user_profile:
       username: haifazahirah
       state: present
